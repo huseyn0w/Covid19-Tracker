@@ -1,2 +1,17 @@
 # covid-tracker
-Covid 19 live data tracker
+
+[Demo](https://huseyn0w-covid-tracker.herokuapp.com/)
+
+[My Website](https://huseyn0w.github.io/)
+
+[My Linkedin Profile](https://linkedin.com/in/huseyn0w)
+
+**Simple COVID19 Tracker :)**
+
+
+**Technologies that used in creation of this app:**
+- React JS
+- Axios
+- Material UI
+- React Charts 2
+- React Count

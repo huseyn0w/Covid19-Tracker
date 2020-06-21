@@ -25,7 +25,7 @@ function App() {
   }, [currentCountry]);
 
  
-  let content = 'Start point';
+  let content = 'Loading...';
 
   const hangleChangeCountry = (e) => {
     // console.log(e);
