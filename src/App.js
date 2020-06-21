@@ -1,24 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Fragment, useState, useEffect} from 'react';
 import './App.css';
+import {fetchData} from './api/api';
+
+import { HeaderLogo } from './components/HeaderLogo';
+import { Cards } from './components/Cards';
+import { Dropdown } from './components/Dropdown';
+import { Graph } from './components/Graph';
+
 
 function App() {
+
+  const [state, setState] = useState(false);
+  const [currentCountry, setCurrentCountry] = useState('Global');
+
+  useEffect(() => {
+
+    (async function getApiData() {
+      const data = await fetchData(currentCountry);
+      // console.log(data);
+      setState(data);
+    })()
+
+    
+  }, [currentCountry]);
+
+ 
+  let content = 'Start point';
+
+  const hangleChangeCountry = (e) => {
+    // console.log(e);
+    setCurrentCountry(e);
+  }
+
+  if(state) {
+    content = (
+      <Fragment>
+        <HeaderLogo />
+        <Dropdown data={state} onChangeCountry={(e) => hangleChangeCountry(e)} currentCountry={currentCountry} />
+        <Cards data={state} />
+        <Graph data={state} country={currentCountry} />
+      </Fragment>
+    )
+  }
+ 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      {content}
     </div>
   );
 }
