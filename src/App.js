@@ -6,6 +6,7 @@ import { HeaderLogo } from './components/HeaderLogo';
 import { Cards } from './components/Cards';
 import { Dropdown } from './components/Dropdown';
 import { Graph } from './components/Graph';
+import { About } from './components/About';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
     content = (
       <Fragment>
         <HeaderLogo />
+         <About />
         <Dropdown data={state} onChangeCountry={(e) => hangleChangeCountry(e)} currentCountry={currentCountry} />
         <Cards data={state} />
         <Graph data={state} country={currentCountry} />

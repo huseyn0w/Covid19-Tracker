@@ -6,6 +6,8 @@
 
 [My Linkedin Profile](https://linkedin.com/in/huseyn0w)
 
+![Live preview Image](https://repository-images.githubusercontent.com/273882564/5effb100-b49a-11ea-801b-5a53bc943f9b)
+
 **Simple COVID19 Tracker :)**
 
 
